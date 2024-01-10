@@ -1,8 +1,10 @@
-import Link from "next/link";
-import { Linkedin, Mail, Phone } from "lucide-react";
 import Image from "next/image";
-import { LuGithub } from "react-icons/lu";
+import Link from "next/link";
+
 import { BsTwitterX } from "react-icons/bs";
+import { Linkedin, Mail, Phone } from "lucide-react";
+import { LuGithub } from "react-icons/lu";
+
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 

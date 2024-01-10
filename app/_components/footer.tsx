@@ -1,5 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
+import { useTheme } from "next-themes";
+
 import {
   Select,
   SelectContent,
@@ -7,8 +11,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 export const Footer = () => {
   const { theme, setTheme } = useTheme();

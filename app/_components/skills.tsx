@@ -1,6 +1,5 @@
 "use client";
 
-import { Heading } from "@/components/ui/heading";
 import { FaReact } from "react-icons/fa";
 import {
   SiAdobephotoshop,
@@ -14,9 +13,12 @@ import {
   SiVercel,
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button, buttonVariants } from "@/components/ui/button";
+
 import { cn } from "@/lib/utils";
+
+import { buttonVariants } from "@/components/ui/button";
+import { Heading } from "@/components/ui/heading";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const SKILLS = [
   {

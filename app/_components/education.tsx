@@ -1,5 +1,4 @@
 import { Heading } from "@/components/ui/heading";
-import React from "react";
 
 const EDUCATION = [
   {
