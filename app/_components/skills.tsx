@@ -15,7 +15,8 @@ import {
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const SKILLS = [
   {
@@ -89,10 +90,14 @@ export const Skills = () => {
               const tab = SKILLS.find((skill) => skill.title === heading);
               return (
                 <TabsTrigger value={heading} key={heading} className="">
-                  <Button size="sm" variant="ghost">
+                  <div
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "sm" }),
+                    )}
+                  >
                     <span className="mr-2">{tab?.icon}</span>
                     {tab?.title}
-                  </Button>
+                  </div>
                 </TabsTrigger>
               );
             })}
