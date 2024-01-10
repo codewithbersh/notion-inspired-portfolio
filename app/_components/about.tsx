@@ -21,8 +21,8 @@ export const About = () => {
         />
       </div>
 
-      <div className="flex h-[62px] items-center">
-        <div className="ml-auto flex w-fit gap-2 text-muted-foreground">
+      <div className="flex h-[124px] items-end sm:h-[62px] sm:items-center">
+        <div className="flex w-fit gap-2 text-muted-foreground sm:ml-auto">
           <Button size="icon" variant="outline" asChild>
             <Link href={`mailto:${aboutConfig.email}`}>
               <Mail className="h-4 w-4" />
@@ -46,12 +46,11 @@ export const About = () => {
       </div>
 
       <div className="flex flex-col gap-6">
-        <Heading className=" text-[40px]">Jonathan Turner</Heading>
+        <Heading className=" text-2xl sm:text-[40px]">
+          {aboutConfig.name}
+        </Heading>
         <p className=" font-mono font-medium leading-loose text-muted-foreground">
-          Experienced Senior Frontend Developer with over 6 years of proficiency
-          in crafting seamless user interfaces. Specialized in modern JavaScript
-          technologies and web design. Committed to excellence in code
-          development and mentoring.
+          {aboutConfig.description}
         </p>
 
         <Link
