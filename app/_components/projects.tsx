@@ -107,7 +107,7 @@ export const Projects = () => {
                 key={group?.title.text}
               >
                 {group?.projects?.map((project) => (
-                  <Project project={project} />
+                  <Project project={project} key={project.title} />
                 ))}
               </TabsContent>
             );

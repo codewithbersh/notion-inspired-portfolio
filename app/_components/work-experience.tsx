@@ -51,7 +51,7 @@ export const WorkExperience = () => {
               </div>
               <div>{work.position}</div>
             </div>
-            <p className="font-mono text-muted-foreground">
+            <p className="font-mono leading-loose text-muted-foreground">
               {work.description}
             </p>
           </div>
