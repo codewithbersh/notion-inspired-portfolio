@@ -1,20 +1,13 @@
-import { Heading } from "@/components/ui/heading";
+import { educationConfig } from "@/config/education";
 
-const EDUCATION = [
-  {
-    institution: "Technische Universität München",
-    qualification: "Bachelor of Science (B.Sc.) in Computer Science",
-    from: "2010",
-    to: "2013",
-  },
-];
+import { Heading } from "@/components/ui/heading";
 
 export const Education = () => {
   return (
     <div className="space-y-6">
       <Heading>Education</Heading>
       <div className="flex flex-col gap-6">
-        {EDUCATION.map((education) => (
+        {educationConfig.educationList.map((education) => (
           <div key={education.institution}>
             <div className="flex items-center justify-between gap-4">
               <h1 className="font-bold">{education.institution}</h1>

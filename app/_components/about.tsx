@@ -1,34 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { BsTwitterX } from "react-icons/bs";
-import { Linkedin, Mail, Phone } from "lucide-react";
-import { LuGithub } from "react-icons/lu";
+import { Mail, Phone } from "lucide-react";
+
+import { aboutConfig } from "@/config/about";
 
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
-
-const CONTACT = {
-  tel: "+97412344321",
-  email: "hello@brucesalcedo.com",
-  social: [
-    {
-      name: "Github",
-      url: "https://github.com/codewithbersh",
-      icon: LuGithub,
-    },
-    {
-      name: "Linkedin",
-      url: "https://github.com/codewithbersh",
-      icon: Linkedin,
-    },
-    {
-      name: "X",
-      url: "https://x.com/codewithbersh",
-      icon: BsTwitterX,
-    },
-  ],
-};
 
 export const About = () => {
   return (
@@ -46,18 +24,18 @@ export const About = () => {
       <div className="flex h-[62px] items-center">
         <div className="ml-auto flex w-fit gap-2 text-muted-foreground">
           <Button size="icon" variant="outline" asChild>
-            <Link href={`mailto:${CONTACT.email}`}>
+            <Link href={`mailto:${aboutConfig.email}`}>
               <Mail className="h-4 w-4" />
             </Link>
           </Button>
 
           <Button size="icon" variant="outline" asChild>
-            <Link href={`tel:${CONTACT.tel}`}>
+            <Link href={`tel:${aboutConfig.tel}`}>
               <Phone className="h-4 w-4" />
             </Link>
           </Button>
 
-          {CONTACT.social.map(({ url, icon: Icon, name }) => (
+          {aboutConfig.social.map(({ url, icon: Icon, name }) => (
             <Button key={name} size="icon" variant="outline" asChild>
               <Link href={url} target="_blank">
                 <Icon className="h-4 w-4" />

@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { projectConfig } from "@/config/project";
 
 import { buttonVariants } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
@@ -8,73 +9,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { Project } from "./project";
 
-export type TPRoject = {
-  websiteLink?: string;
-  githubLink?: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  technologies?: string[];
-};
-
-const PROJECTS = [
-  {
-    title: {
-      text: "Selected",
-      emoji: "🤯",
-    },
-    projects: [
-      {
-        websiteLink: "/",
-        githubLink: "/",
-        title: "📕 Kanban",
-        description:
-          "A curated e-commerce experience, seamlessly connecting consumers with a diverse range of unique products.",
-        imageUrl: "/kanban.png",
-        technologies: ["NextJS", "Django", "Tailwind"],
-      },
-
-      {
-        websiteLink: "/",
-        githubLink: "/",
-        title: "📳 Feedback App",
-        description:
-          "A curated e-commerce experience, seamlessly connecting consumers with a diverse range of unique products.",
-        imageUrl: "/feedback-app.png",
-        technologies: ["NextJS", "Django", "Tailwind"],
-      },
-      {
-        websiteLink: "/",
-        githubLink: "/",
-        title: "🔔 Audiophile",
-        description:
-          "A curated e-commerce experience, seamlessly connecting consumers with a diverse range of unique products.",
-        imageUrl: "/audiophile.png",
-        technologies: ["NextJS", "Django", "Tailwind"],
-      },
-    ] as TPRoject[],
-  },
-  {
-    title: {
-      text: "Archived",
-      emoji: "🥺",
-    },
-    projects: [
-      {
-        websiteLink: "/",
-        githubLink: "/",
-        title: "💯 Quiz App",
-        description:
-          "A curated e-commerce experience, seamlessly connecting consumers with a diverse range of unique products.",
-        imageUrl: "/quiz-app.jpeg",
-        technologies: ["NextJS", "Django", "Tailwind"],
-      },
-    ] as TPRoject[],
-  },
-];
-
 export const Projects = () => {
-  const groupTitles = PROJECTS.map((group) => group.title);
+  const groupTitles = projectConfig.projectList.map((group) => group.title);
   return (
     <div className="space-y-6">
       <Heading>Projects</Heading>
@@ -96,7 +32,7 @@ export const Projects = () => {
           </TabsList>
 
           {groupTitles.map((contentGroupTitle) => {
-            const group = PROJECTS.find(
+            const group = projectConfig.projectList.find(
               (group) => group.title.text === contentGroupTitle.text,
             );
 

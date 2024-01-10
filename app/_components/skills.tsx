@@ -1,86 +1,14 @@
 "use client";
 
-import { FaReact } from "react-icons/fa";
-import {
-  SiAdobephotoshop,
-  SiCanva,
-  SiDjango,
-  SiFigma,
-  SiPrisma,
-  SiPython,
-  SiTailwindcss,
-  SiTypescript,
-  SiVercel,
-} from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
-
 import { cn } from "@/lib/utils";
+import { skillsConfig } from "@/config/skills";
 
 import { buttonVariants } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const SKILLS = [
-  {
-    title: "Technology",
-    icon: "👷‍♂️",
-    skills: [
-      {
-        label: "React",
-        icon: FaReact,
-      },
-      {
-        label: "NextJS",
-        icon: TbBrandNextjs,
-      },
-      {
-        label: "TypeScript",
-        icon: SiTypescript,
-      },
-      {
-        label: "Tailwind",
-        icon: SiTailwindcss,
-      },
-      {
-        label: "Python",
-        icon: SiPython,
-      },
-      {
-        label: "Django",
-        icon: SiDjango,
-      },
-      {
-        label: "Prisma",
-        icon: SiPrisma,
-      },
-      {
-        label: "Vercel",
-        icon: SiVercel,
-      },
-    ],
-  },
-  {
-    title: "Design",
-    icon: "🎨",
-    skills: [
-      {
-        label: "Figma",
-        icon: SiFigma,
-      },
-      {
-        label: "Photoshop",
-        icon: SiAdobephotoshop,
-      },
-      {
-        label: "Canva",
-        icon: SiCanva,
-      },
-    ],
-  },
-];
-
 export const Skills = () => {
-  const tabHeadings = SKILLS.map((skill) => skill.title);
+  const groupTitles = skillsConfig.skillList.map((group) => group.title);
 
   return (
     <div className="space-y-6">
@@ -88,32 +16,33 @@ export const Skills = () => {
       <div>
         <Tabs defaultValue="Technology">
           <TabsList>
-            {tabHeadings.map((heading) => {
-              const tab = SKILLS.find((skill) => skill.title === heading);
+            {groupTitles.map((group) => {
               return (
-                <TabsTrigger value={heading} key={heading} className="">
+                <TabsTrigger value={group.text} key={group.text}>
                   <div
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "sm" }),
                     )}
                   >
-                    <span className="mr-2">{tab?.icon}</span>
-                    {tab?.title}
+                    <span className="mr-2">{group.emoji}</span>
+                    {group.text}
                   </div>
                 </TabsTrigger>
               );
             })}
           </TabsList>
 
-          {tabHeadings.map((heading) => {
-            const tab = SKILLS.find((skill) => skill.title === heading);
+          {groupTitles.map((contentGroupTitle) => {
+            const group = skillsConfig.skillList.find(
+              (group) => group.title.text === contentGroupTitle.text,
+            );
             return (
               <TabsContent
-                value={heading}
+                value={group?.title.text || ""}
                 className="grid gap-4 sm:grid-cols-2"
-                key={heading}
+                key={group?.title.text}
               >
-                {tab?.skills.map(({ icon: Icon, label }) => (
+                {group?.skills.map(({ icon: Icon, label }) => (
                   <div
                     key={label}
                     className="flex w-full items-center gap-4 rounded-[4px] border  bg-secondary p-[10px]"

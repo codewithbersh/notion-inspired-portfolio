@@ -4,9 +4,9 @@ import Link from "next/link";
 import { CgWebsite } from "react-icons/cg";
 import { SiGithub } from "react-icons/si";
 
-import { Button } from "@/components/ui/button";
+import { TPRoject } from "@/config/project";
 
-import { TPRoject } from "./projects";
+import { Button } from "@/components/ui/button";
 
 interface ProjectProps {
   project: TPRoject;
