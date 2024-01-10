@@ -14,13 +14,13 @@ interface ProjectProps {
 
 export const Project = ({ project }: ProjectProps) => {
   return (
-    <div className="group relative flex cursor-pointer flex-col overflow-hidden rounded-[4px] bg-neutral-100">
+    <div className="group relative flex cursor-pointer flex-col overflow-hidden rounded-[4px] bg-neutral-100 dark:bg-neutral-800">
       <div className="absolute left-0 top-0 z-10 flex h-full w-full flex-col bg-black/30 p-4 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
         <div className="mt-auto flex justify-between">
           {project.websiteLink && (
             <Button
               variant="secondary"
-              className="rounded-full hover:bg-neutral-200"
+              className="rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-700"
               size="sm"
               asChild
             >
@@ -33,7 +33,7 @@ export const Project = ({ project }: ProjectProps) => {
           {project.githubLink && (
             <Button
               variant="secondary"
-              className="w-fit rounded-full hover:bg-neutral-200"
+              className="w-fit rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-700"
               size="sm"
               asChild
             >

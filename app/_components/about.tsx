@@ -81,7 +81,10 @@ export const About = () => {
           className="w-fit"
         >
           📍{" "}
-          <Button variant="link" className="px-0 font-mono">
+          <Button
+            variant="link"
+            className="px-0 font-mono text-muted-foreground"
+          >
             Berlin, Germany
           </Button>
         </Link>
