@@ -15,15 +15,10 @@ interface ProjectProps {
 export const Project = ({ project }: ProjectProps) => {
   return (
     <div className="group relative flex cursor-pointer flex-col overflow-hidden rounded-[4px] bg-neutral-100 dark:bg-neutral-800">
-      <div className="absolute left-0 top-0 z-10 flex h-full w-full flex-col bg-black/30 p-4 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+      <div className="absolute left-0 top-0 z-10 flex h-full w-full flex-col bg-white/30 p-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:backdrop-blur-sm dark:bg-black/30">
         <div className="mt-auto flex justify-between">
           {project.websiteLink && (
-            <Button
-              variant="secondary"
-              className="rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-700"
-              size="sm"
-              asChild
-            >
+            <Button className="rounded-full" size="sm" asChild>
               <Link href={project.websiteLink}>
                 <CgWebsite className="mr-2 h-4 w-4" />
                 Website
@@ -31,12 +26,7 @@ export const Project = ({ project }: ProjectProps) => {
             </Button>
           )}
           {project.githubLink && (
-            <Button
-              variant="secondary"
-              className="w-fit rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-700"
-              size="sm"
-              asChild
-            >
+            <Button className="rounded-full" size="sm" asChild>
               <Link href="/">
                 <SiGithub className="mr-2 h-4 w-4" />
                 Github
