@@ -27,7 +27,7 @@ export const Footer = () => {
 
   if (!isMounted) return;
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 py-8 md:px-0">
+    <div className="mx-auto w-full max-w-5xl px-4 py-8 xl:px-0">
       <div className="flex items-center gap-4">
         <div className="text-muted-foreground">Theme</div>
 
