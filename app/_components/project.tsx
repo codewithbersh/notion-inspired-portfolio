@@ -14,8 +14,8 @@ interface ProjectProps {
 
 export const Project = ({ project }: ProjectProps) => {
   return (
-    <div className="group relative flex cursor-pointer flex-col overflow-hidden rounded-[4px] bg-neutral-100 dark:bg-neutral-800">
-      <div className="absolute left-0 top-0 z-10 flex h-full w-full flex-col bg-white/30 p-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:backdrop-blur-sm dark:bg-black/30">
+    <div className="group relative flex flex-col overflow-hidden rounded-[4px] bg-neutral-100 dark:bg-neutral-800">
+      <div className="pointer-events-none absolute left-0 top-0 z-10 flex h-full w-full flex-col bg-white/30 p-4 opacity-0 transition-all duration-300 ease-in-out group-hover:backdrop-blur-sm dark:bg-black/30 lg:pointer-events-auto lg:group-hover:opacity-100">
         <div className="mt-auto flex justify-between">
           {project.websiteLink && (
             <Button className="rounded-full" size="sm" asChild>
@@ -57,6 +57,25 @@ export const Project = ({ project }: ProjectProps) => {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="flex justify-between p-4 lg:hidden">
+        {project.websiteLink && (
+          <Button className="px-0" size="sm" variant="link" asChild>
+            <Link href={project.websiteLink} className="hover:underline">
+              <CgWebsite className="mr-2 h-4 w-4" />
+              Website
+            </Link>
+          </Button>
+        )}
+        {project.githubLink && (
+          <Button className="px-0" size="sm" variant="link" asChild>
+            <Link href="/" className="hover:underline">
+              <SiGithub className="mr-2 h-4 w-4 " />
+              Github
+            </Link>
+          </Button>
+        )}
       </div>
     </div>
   );
