@@ -18,6 +18,7 @@ export const About = () => {
           className="object-cover"
           src="/avatar.jpg"
           sizes="100vw"
+          priority
         />
       </div>
 
