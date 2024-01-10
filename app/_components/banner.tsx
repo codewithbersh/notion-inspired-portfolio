@@ -11,6 +11,7 @@ export const Banner = () => {
         className="object-cover"
         src={bannerConfig.imageUrl}
         sizes="100vw"
+        priority
       />
     </div>
   );
