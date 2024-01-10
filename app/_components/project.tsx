@@ -57,6 +57,16 @@ export const Project = ({ project }: ProjectProps) => {
       <div className="flex flex-col gap-4 p-4">
         <h1 className="font-bold">{project.title}</h1>
         <p className="text-muted-foreground">{project.description}</p>
+        <div className="flex flex-wrap gap-4">
+          {project.technologies?.map((tech) => (
+            <div
+              key={tech}
+              className="rounded-[4px] bg-neutral-600 px-2 py-1 font-mono font-medium leading-none text-primary-foreground dark:text-primary"
+            >
+              {tech}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
