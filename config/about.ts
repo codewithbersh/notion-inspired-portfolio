@@ -25,4 +25,5 @@ export const aboutConfig = {
       icon: BsTwitterX,
     },
   ],
+  imageUrl: "/avatar1.jpg",
 };

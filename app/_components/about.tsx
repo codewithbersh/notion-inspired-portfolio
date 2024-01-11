@@ -16,7 +16,7 @@ export const About = () => {
           alt="User avatar"
           fill
           className="object-cover"
-          src="/avatar.jpg"
+          src={aboutConfig.imageUrl}
           sizes="100vw"
           priority
         />

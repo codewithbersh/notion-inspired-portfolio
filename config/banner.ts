@@ -1,3 +1,3 @@
 export const bannerConfig = {
-  imageUrl: "/banner.jpg",
+  imageUrl: "/banner1.jpg",
 };
