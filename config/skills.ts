@@ -57,7 +57,7 @@ export const skillsConfig = {
     {
       title: {
         text: "Design",
-        icon: "🎨",
+        emoji: "🎨",
       },
       skills: [
         {

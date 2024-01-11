@@ -12,7 +12,7 @@ export const projectConfig = {
     {
       title: {
         text: "Selected",
-        emoji: "🤯",
+        emoji: "🚨",
       },
       projects: [
         {
@@ -48,7 +48,7 @@ export const projectConfig = {
     {
       title: {
         text: "Archived",
-        emoji: "🥺",
+        emoji: "⚠️",
       },
       projects: [
         {
